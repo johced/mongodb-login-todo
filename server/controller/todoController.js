@@ -21,7 +21,7 @@ exports.addTodo_post = async (req, res) => {
       res.redirect('back');
     }
     const todo = await new Todo({ task: task }).save();
-    const user = await User.findOne({ _id: req.user.userDB._id });
+    const user = await User.findOne({ _id: req.user.user._id });
 
     user.addTask(todo._id);
 
@@ -56,7 +56,7 @@ exports.editTodo_get = async (req, res) => {
 
     res.render('editTodo.ejs', {
       todos: user.todoList,
-      user: req.user.userDB,
+      user: req.user.user,
       taskId: taskId,
     });
   } catch (err) {
