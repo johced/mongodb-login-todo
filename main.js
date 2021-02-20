@@ -45,6 +45,7 @@ app.use((req, res, next) => {
 
 // *** Load routes ***
 app.use('/', require('./server/routes/homeRoute'));
+app.use('/', require('./server/routes/loginRoute'));
 
 // *** Create local server ****
 app.listen(PORT, () => {
