@@ -1,0 +1,15 @@
+<!-- Include Header -->
+<%- include('partials/_header') %>
+<!-- / Include Header -->
+
+<%- include('partials/_message') %> 
+<form action="/register" method="POST">
+  <input type="text" name="name" id="" placeholder="your name">
+  <input type="email" name="email" placeholder="email">
+  <input type="password" name="password" placeholder="password">
+  <button type="submit">Register</button>
+</form>
+
+<!-- Include Footer -->
+<%- include('partials/_footer') %>
+<!-- /Include Footer -->
