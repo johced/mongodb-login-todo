@@ -1,0 +1,20 @@
+<!-- Include Header -->
+<%- include('partials/_header') %>
+<!-- / Include Header -->
+
+<form action="/login" method="post">
+  <input type="email" name="email" id="" placeholder="Email">
+  <input type="password" name="password" id="" placeholder="password">
+  <button type="submit">Login</button>
+
+  <p>Forgot Password?</p>
+ 
+  <a href="/reset">Reset</a>
+</form>
+
+<%- include('partials/_message') %> 
+
+
+<!-- Include Footer -->
+<%- include('partials/_footer') %>
+<!-- /Include Footer -->
