@@ -5,7 +5,6 @@ let Todo = require('../model/todo');
 exports.todolist_get = async (req, res) => {
   try {
     const user = await User.findOne({ _id: req.user.user._id }).populate('todoList');
-
     res.render('todolist.ejs', { todos: user.todoList, user: req.user.user });
   } catch (err) {
     console.log(err);
@@ -42,7 +41,7 @@ exports.deleteTodo_get = async (req, res) => {
     user.todoList.pull({ _id: todoId });
 
     user.save();
-    console.log(user.todoList);
+
     res.redirect('/todolist');
   } catch (err) {
     console.log(err);

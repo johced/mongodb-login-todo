@@ -2,35 +2,41 @@
 <%- include('partials/_header') %>
 <!-- / Include Header -->
 
-<h1>Welcome <%= user.name %> to your page on our awesome page!</h1>
+<div class="container">
 
-<a href="/logout">Log out</a>
+<h1 class="welcome">Welcome <%= user.name %></h1>
+
+<div class="logout_item">
+<a href="/logout" class="logout">Log out</a>
+</div>
 
 <%- include('partials/_message') %> 
 
-  <form action="/todolist" method="post">
-    <input type="text" name="task" placeholder="My task..." aria-label="my task" autocomplete="off" autofocus />
-    <button type="submit">Add</button>
-  </form>
+  <div class="container_todo">
+    <form action="/todolist" method="post" class="todo_header">
+      <input type="text" name="task" placeholder="My task..." aria-label="my task" autocomplete="off" autofocus />
+      <button type="submit">+</button>
+    </form>
 
-  <ul>
+    <ul>
     <% todos.forEach(details=> { %>
       <% if (details._id==taskId) { %>
-        <form action="/todolist/edit/<%=details._id%>" method="post">
+        <form action="/todolist/edit/<%=details._id%>" method="post" class="todo_header_edit">
           <input type="text" name="task" value="<%= details.task%>" aria-label="my task" autocomplete="off" autofocus />
           <button type="submit">Update</button>
           <a href="/todolist">Cancel</a>
         </form>
         <% } else { %>
-          <li>
-            <%= details.task %>
-              <a href="/todolist/edit/<%= details.id %>">Edit</a>
-              <a href="/todolist/delete/<%= details.id %>">Delete</a>
+          <li class="todo_list_item">
+            <div class="todo_list_item_name"><%= details.task %></div>
+              <a href="/todolist/edit/<%= details.id %>" class="edit">Edit</a>
+              <a href="/todolist/delete/<%= details.id %>" class="edit">Delete</a>
           </li>
           <% } %>
-            <% }) %>
-  </ul>
-
+          <% }) %>
+    </ul>
+  </div>
+</div>
 <!-- Include Footer -->
 <%- include('partials/_footer') %>
 <!-- /Include Footer -->
