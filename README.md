@@ -7,7 +7,7 @@ Fully functional todo-list, backend task (don't look at the css class names...).
 ## Loginsystem - Works with multiple users.
 
 - I have created two models, user/todo.
-- Todo is pushed into user with each todo id.
+- Todo is pushed into user with each todo id (mongoose populate/ref).
 - When loged in user only see their own todos.
 - bcrypt, jsonwebtoken
 
@@ -31,4 +31,4 @@ Clone https://github.com/johced/mongodb-login-todo
 All set to try it out! Enjoy :-)
 
 
-*If you edit ejs files with my vs code/prettier settings you have to create .prettierignore and set \*.ejs in order for it to work (adds end tags where they shouldn't be otherwise)*
+*If you edit ejs files with my VS code/prettier settings you have to create .prettierignore and set \*.ejs in order for it to work (adds end tags where they shouldn't be otherwise)*
