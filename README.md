@@ -19,17 +19,16 @@ Fully functional todo-list, backend task (don't look at the css class names...).
 
 Clone https://github.com/johced/mongodb-login-todo
 
-- npm i
-- create .env file and set:
-  -- PORT=3000?
-  -- MONGO_URI=yourMongoDBconnectionString
-  -- SECRET_KEY=whateveryouwant
-  -- USER_MAIL=your zoho mail...
-  -- USER_PASSWORD=your zoho mail password
-- npm start in terminal
+1. npm i
+2. create .env file and set:
+  - PORT=3000?
+  - MONGO_URI=yourMongoDBconnectionString
+  - SECRET_KEY=whateveryouwant
+  - USER_MAIL=your zoho mail...
+  - USER_PASSWORD=your zoho mail password
+3. npm start in terminal
 
 All set to try it out! Enjoy :-)
 
-// **
-If you edit ejs files with my vs code/prettier settings you have to create .prettierignore and set "\*.ejs" in order for it to work (adds end tags where they shouldn't be otherwise)
-// **
+
+*If you edit ejs files with my vs code/prettier settings you have to create .prettierignore and set \*.ejs in order for it to work (adds end tags where they shouldn't be otherwise)*
