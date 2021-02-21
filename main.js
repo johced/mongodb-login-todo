@@ -3,6 +3,7 @@ const express = require('express');
 const morgan = require('morgan');
 const flash = require('connect-flash');
 const session = require('express-session');
+const path = require('path');
 const connectDB = require('./server/database/connection');
 
 const app = express();
@@ -42,6 +43,9 @@ app.use((req, res, next) => {
   res.locals.warning_msg = req.flash('warning_msg');
   next();
 });
+
+// *** load assets ***
+app.use('/css', express.static(path.resolve(__dirname, 'assets/css')));
 
 // *** Load routes ***
 app.use('/', require('./server/routes/homeRoute'));

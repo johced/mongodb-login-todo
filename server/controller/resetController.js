@@ -37,7 +37,7 @@ exports.reset_post = async (req, res) => {
     await user.save();
 
     await transport.sendMail({
-      from: process.env.USERMAIL,
+      from: process.env.USER_MAIL,
       to: user.email,
       subject: 'Reset your password',
       html: `<h4>Please follow this <a href="http://localhost:3000/reset/${user.cryptoUrl}">Link</a> to reset password</h4>`,
@@ -87,6 +87,7 @@ exports.resetPasswordForm_post = async (req, res) => {
 
     user.password = hashedPassword;
     user.save();
+    req.flash('success_msg', 'Successfully changed password.');
     res.redirect('/login');
   } catch (err) {
     console.log(err);

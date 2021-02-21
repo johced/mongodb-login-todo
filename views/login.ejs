@@ -1,19 +1,16 @@
 <!-- Include Header -->
 <%- include('partials/_header') %>
 <!-- / Include Header -->
-
-<form action="/login" method="post">
+<div class="container">
+<form action="/login" method="post" class="todo_header_edit">
   <input type="email" name="email" id="" placeholder="Email">
   <input type="password" name="password" id="" placeholder="password">
-  <button type="submit">Login</button>
-
-  <p>Forgot Password?</p>
- 
-  <a href="/reset">Reset</a>
+  <button type="submit" id="login_btn">Login</button>
+  <p class="small"> <a href="/reset">Reset password</a></p>
 </form>
 
 <%- include('partials/_message') %> 
-
+</div>
 
 <!-- Include Footer -->
 <%- include('partials/_footer') %>
