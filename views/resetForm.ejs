@@ -1,0 +1,17 @@
+<!-- Include Header -->
+<%- include('partials/_header') %>
+<!-- / Include Header -->
+<div class="container">
+<form action="/resetPasswordForm" method="post" class="todo_header_reset">
+
+    <input type="password" name="password" id="" placeholder="new password">
+    <input type="password" name="confirmPassword" id="" placeholder="confirm password">
+    <input type="email" name="email" value="<%=email%>" hidden>
+    <button type="submit" id="login_btn">Reset</button>
+  
+    <%- include('partials/_message') %> 
+  </form>
+</div>
+<!-- Include Footer -->
+<%- include('partials/_footer') %>
+<!-- /Include Footer -->

@@ -1,0 +1,38 @@
+<!-- Include Header -->
+<%- include('partials/_header') %>
+<!-- / Include Header -->
+
+<div class="container">
+
+  <h1 class="welcome">Welcome <%=user.name%>!</h1>
+  <p class="welcome"><%- include('partials/_message') %> </p>
+
+
+   <div class="logout_item">
+      <a href="/logout" class="logout">Logout</a>  
+    </div>
+
+
+  <div class="container_todo">
+    <form action="/todolist" method="post" class="todo_header">
+      <input type="text" name="task" placeholder="My task..." aria-label="my task" autocomplete="off" autofocus />
+      <button type="submit">+</button>
+    </form>
+
+ 
+    <ul>
+    <% todos.forEach(details=> { %>
+
+      <li class="todo_list_item">
+        <div class="todo_list_item_name"><%= details.task %></div>
+          <a href="/todolist/edit/<%= details.id %>" class="edit">Edit</a>
+          <a href="/todolist/delete/<%= details.id %>" class="delete">Delete</a>
+      </li>
+
+      <% }) %>
+    </ul>
+  </div>
+</div>
+<!-- Include Footer -->
+<%- include('partials/_footer') %>
+<!-- /Include Footer -->

@@ -1,0 +1,15 @@
+<!-- Include Header -->
+<%- include('partials/_header') %>
+<!-- / Include Header -->
+<div class="container">
+<form action="/reset" method="post" class="todo_header_reset">
+
+    <input type="email" name="email" id="" placeholder="Your email">
+    <button type="submit" id="login_btn">Send</button>
+    
+    <%- include('partials/_message') %> 
+</form>
+</div>
+<!-- Include Footer -->
+<%- include('partials/_footer') %>
+<!-- /Include Footer -->
